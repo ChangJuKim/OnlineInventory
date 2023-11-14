@@ -1,5 +1,9 @@
 # OnlineInventory
-An online inventory app/game. 
+
+An online inventory app/game.
+A project by Chang Ju Kim referencing Java Brains' "Spring Boot Quick Start" youtube tutorial listed here: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x
+
+## App details
 
 Users will be able to create an account.
 Users will gain a fixed amount of credit per day to be used as currency.
