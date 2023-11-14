@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "InventoryApiApp",
+      "request": "launch",
+      "mainClass": "io.onlineinventory.InventoryApiApp",
+      "projectName": "inventory-api"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-Main<inventory-api>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "io.onlineinventory.Main",
+      "projectName": "inventory-api",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
