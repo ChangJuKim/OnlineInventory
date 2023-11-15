@@ -32,4 +32,14 @@ public class ItemController {
     public void addItem(@RequestBody Item item) {
         itemService.addItem(item);
     }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/items/{id}")
+    public void updateItem(@RequestBody Item item, @PathVariable String id) {
+        itemService.updateItem(id, item);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/items/{id}")
+    public void deleteItem(@PathVariable String id) {
+        itemService.deleteItem(id);
+    }
 }

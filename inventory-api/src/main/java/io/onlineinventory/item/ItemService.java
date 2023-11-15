@@ -26,4 +26,19 @@ public class ItemService {
     public void addItem(Item item) {
         items.add(item);
     }
+
+    public void updateItem(String id, Item item) {
+        for (int i = 0; i < items.size(); i++) {
+            Item itemInList = items.get(i);
+            if (itemInList.getId().equals(id)) {
+                items.set(i, item);
+                return;
+            }
+
+        }
+    }
+
+    public void deleteItem(String id) {
+        items.removeIf(item -> item.getId().equals(id));
+    }
 }
