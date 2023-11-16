@@ -2,6 +2,19 @@
   "configurations": [
     {
       "type": "java",
+      "name": "InventoryApiDataApplication",
+      "request": "launch",
+      "mainClass": "io.onlineinventory.InventoryApiDataApplication",
+      "projectName": "inventory-api-data"
+    },
+    {
+      "type": "java",
+      "name": "InventoryApiDataApplication",
+      "request": "launch",
+      "mainClass": "io.onlineinventory.inventoryapidata.InventoryApiDataApplication"
+    },
+    {
+      "type": "java",
       "name": "InventoryApiApp",
       "request": "launch",
       "mainClass": "io.onlineinventory.InventoryApiApp",
