@@ -29,11 +29,11 @@ public class ItemControllerTest {
 
     @BeforeEach
     void init() {
-        itemList = Arrays.asList(new Item[] { Constants.COOLTOKEN, Constants.CUTETOKEN });
+        itemList = Arrays.asList(new Item[] { Constants.COOL_TOKEN, Constants.CUTE_TOKEN });
 
         when(itemService.getAllItems()).thenReturn(itemList);
-        when(itemService.getItem("coolToken")).thenReturn(Constants.COOLTOKEN);
-        when(itemService.getItem("cuteToken")).thenReturn(Constants.CUTETOKEN);
+        when(itemService.getItem("coolToken")).thenReturn(Constants.COOL_TOKEN);
+        when(itemService.getItem("cuteToken")).thenReturn(Constants.CUTE_TOKEN);
 
     }
 }

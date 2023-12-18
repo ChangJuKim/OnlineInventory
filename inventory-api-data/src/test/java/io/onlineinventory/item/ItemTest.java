@@ -49,9 +49,9 @@ public class ItemTest {
 
         @BeforeEach
         void init() {
-            coolToken = Constants.COOLTOKEN;
-            cuteToken = Constants.CUTETOKEN;
-            emptyToken = Constants.EMPTYTOKEN;
+            coolToken = Constants.COOL_TOKEN;
+            cuteToken = Constants.CUTE_TOKEN;
+            emptyToken = Constants.EMPTY_TOKEN;
         }
 
         @Test
@@ -87,8 +87,8 @@ public class ItemTest {
 
         @BeforeEach
         void init() {
-            coolToken = Constants.COOLTOKEN;
-            emptyToken = Constants.EMPTYTOKEN;
+            coolToken = Constants.COOL_TOKEN;
+            emptyToken = Constants.EMPTY_TOKEN;
         }
 
         @Test
