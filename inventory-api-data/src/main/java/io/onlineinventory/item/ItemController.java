@@ -12,8 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ItemController {
 
-    @Autowired
     private ItemService itemService;
+
+    // Technically autowired unnecessary as we only have one constructor
+    @Autowired
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
+    }
 
     @RequestMapping("/items")
     public List<Item> getAllItems() {
