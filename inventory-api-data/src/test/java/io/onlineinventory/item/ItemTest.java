@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import io.onlineinventory.util.Constants;
+
 @SpringBootTest
 public class ItemTest {
 
@@ -21,7 +23,6 @@ public class ItemTest {
         void testEmptyConstructor() {
             try {
                 Item emptyItem = new Item();
-                Item emptyItemTwo = new Item();
             } catch (Exception ex) {
                 fail(ex.getMessage());
             }
@@ -48,9 +49,9 @@ public class ItemTest {
 
         @BeforeEach
         void init() {
-            coolToken = new Item("coolToken", "Cool Token", "A token showing how cool you are");
-            cuteToken = new Item("cuteToken", "Cute Token", "A token showing your fondness for cute things");
-            emptyToken = new Item();
+            coolToken = Constants.COOLTOKEN;
+            cuteToken = Constants.CUTETOKEN;
+            emptyToken = Constants.EMPTYTOKEN;
         }
 
         @Test
@@ -86,8 +87,8 @@ public class ItemTest {
 
         @BeforeEach
         void init() {
-            coolToken = new Item("coolToken", "Cool Token", "A token showing how cool you are");
-            emptyToken = new Item();
+            coolToken = Constants.COOLTOKEN;
+            emptyToken = Constants.EMPTYTOKEN;
         }
 
         @Test

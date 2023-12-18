@@ -3,6 +3,7 @@ package io.onlineinventory.item;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import io.onlineinventory.util.Constants;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
@@ -26,15 +29,11 @@ public class ItemControllerTest {
 
     @BeforeEach
     void init() {
-        itemList = new ArrayList<>();
-        Item coolToken = new Item("coolToken", "Cool Token", "A token showing how cool you are");
-        Item cuteToken = new Item("cuteToken", "Cute Token", "A token showing your fondness for cute things");
-        itemList.add(coolToken);
-        itemList.add(cuteToken);
+        itemList = Arrays.asList(new Item[] { Constants.COOLTOKEN, Constants.CUTETOKEN });
 
         when(itemService.getAllItems()).thenReturn(itemList);
-        when(itemService.getItem("coolToken")).thenReturn(coolToken);
-        when(itemService.getItem("cuteToken")).thenReturn(cuteToken);
+        when(itemService.getItem("coolToken")).thenReturn(Constants.COOLTOKEN);
+        when(itemService.getItem("cuteToken")).thenReturn(Constants.CUTETOKEN);
 
     }
 }
