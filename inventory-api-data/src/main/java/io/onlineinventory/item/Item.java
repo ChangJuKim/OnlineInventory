@@ -7,11 +7,12 @@ import jakarta.persistence.Id;
 public class Item {
 
     @Id
-    private String id;
+    private final String id;
     private String name;
     private String description;
 
-    public Item() {
+    public Item(String id) {
+        this.id = id;
     }
 
     public Item(String id, String name, String description) {
@@ -22,10 +23,6 @@ public class Item {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -42,5 +39,9 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String toString() {
+        return "{\nid: " + this.id + "\n\tname: " + this.name + "\n\tdescription: " + this.description + "}";
     }
 }
