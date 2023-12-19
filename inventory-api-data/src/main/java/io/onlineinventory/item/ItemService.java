@@ -34,7 +34,11 @@ public class ItemService {
     }
 
     public void updateItem(String id, Item item) {
-        itemRepository.save(item);
+        if (item.getId().equals(id)) {
+            itemRepository.save(item);
+        } else {
+            throw new IllegalArgumentException("Improper id " + id + " for item " + item);
+        }
     }
 
     public void deleteItem(String id) {

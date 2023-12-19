@@ -3,6 +3,7 @@ package io.onlineinventory.item;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -22,7 +23,7 @@ public class ItemTest {
         @DisplayName("Testing empty constructor")
         void testEmptyConstructor() {
             try {
-                Item emptyItem = new Item();
+                Item emptyItem = new Item("empty item");
             } catch (Exception ex) {
                 fail(ex.getMessage());
             }
@@ -57,25 +58,25 @@ public class ItemTest {
         @Test
         @DisplayName("Testing get method for id")
         void testGetId() {
-            assertEquals(coolToken.getId(), "coolToken");
-            assertEquals(cuteToken.getId(), "cuteToken");
-            assertEquals(emptyToken.getId(), null);
+            assertEquals(coolToken.getId(), Constants.COOL_TOKEN.getId());
+            assertEquals(cuteToken.getId(), Constants.CUTE_TOKEN.getId());
+            assertEquals(emptyToken.getId(), Constants.EMPTY_TOKEN.getId());
         }
 
         @Test
         @DisplayName("Testing get method for name")
         void testGetName() {
-            assertEquals(coolToken.getName(), "Cool Token");
-            assertEquals(cuteToken.getName(), "Cute Token");
-            assertEquals(emptyToken.getName(), null);
+            assertEquals(coolToken.getName(), Constants.COOL_TOKEN.getName());
+            assertEquals(cuteToken.getName(), Constants.CUTE_TOKEN.getName());
+            assertEquals(emptyToken.getName(), Constants.EMPTY_TOKEN.getName());
         }
 
         @Test
         @DisplayName("Testing get method for description")
         void testGetDescription() {
-            assertEquals(coolToken.getDescription(), "A token showing how cool you are");
-            assertEquals(cuteToken.getDescription(), "A token showing your fondness for cute things");
-            assertEquals(emptyToken.getDescription(), null);
+            assertEquals(coolToken.getDescription(), Constants.COOL_TOKEN.getDescription());
+            assertEquals(cuteToken.getDescription(), Constants.CUTE_TOKEN.getDescription());
+            assertEquals(emptyToken.getDescription(), Constants.EMPTY_TOKEN.getDescription());
         }
     }
 
@@ -87,20 +88,14 @@ public class ItemTest {
 
         @BeforeEach
         void init() {
-            coolToken = Constants.COOL_TOKEN;
-            emptyToken = Constants.EMPTY_TOKEN;
-        }
-
-        @Test
-        @DisplayName("Testing set method for id")
-        void testSetId() {
-            String newCoolId = "newCoolToken";
-            String newCuteId = "newCuteToken";
-
-            coolToken.setId(newCoolId);
-            emptyToken.setId(newCuteId);
-            assertEquals(coolToken.getId(), newCoolId);
-            assertEquals(emptyToken.getId(), newCuteId);
+            coolToken = new Item(
+                    Constants.COOL_TOKEN.getId(),
+                    Constants.COOL_TOKEN.getName(),
+                    Constants.COOL_TOKEN.getDescription());
+            emptyToken = new Item(
+                    Constants.EMPTY_TOKEN.getId(),
+                    Constants.EMPTY_TOKEN.getName(),
+                    Constants.EMPTY_TOKEN.getDescription());
         }
 
         @Test
