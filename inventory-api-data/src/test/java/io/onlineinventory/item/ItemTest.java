@@ -3,7 +3,6 @@ package io.onlineinventory.item;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -23,7 +22,7 @@ public class ItemTest {
         @DisplayName("Testing empty constructor")
         void testEmptyConstructor() {
             try {
-                Item emptyItem = new Item("empty item");
+                new Item("empty item");
             } catch (Exception ex) {
                 fail(ex.getMessage());
             }
@@ -33,8 +32,8 @@ public class ItemTest {
         @DisplayName("Testing full constructor")
         void testConstructor() {
             try {
-                Item anItem = new Item("an id", "a name", "a description");
-                Item another = new Item("123", "name", "desc");
+                new Item("an id", "a name", "a description");
+                new Item("123", "name", "desc");
             } catch (Exception ex) {
                 fail(ex.getMessage());
             }
